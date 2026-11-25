@@ -2,6 +2,10 @@ package com.pluralsight;
 
 import com.pluralsight.canvas.Turtle;
 import com.pluralsight.canvas.World;
+import com.pluralsight.shapes.Square;
+
+import java.awt.*;
+import java.awt.geom.Point2D;
 
 public class UserInterface {
     // Create canvas
@@ -10,11 +14,8 @@ public class UserInterface {
     public static Turtle turtle = new Turtle(world, 0, 0);
 
     public static void display() throws InterruptedException {
-        // No trail by default
-        turtle.penUp();
-
-        drawRectangle();
-        drawCircle();
+        Square square = new Square(turtle, Color.black, 3, 50);
+square.paint();
     }
 
     public static void drawRectangle() throws InterruptedException {
