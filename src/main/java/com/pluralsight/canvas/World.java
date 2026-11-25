@@ -57,6 +57,8 @@ public class World extends JFrame {
 
     public final int centerX;
     public final int centerY;
+    private BufferedImage backgroundImage;
+
 
 
     /**
@@ -116,6 +118,10 @@ public class World extends JFrame {
      */
     public void erase() {
         this.gg.clearRect(0, 0, this.ground.getWidth(), this.ground.getHeight());
+        if (this.backgroundImage != null) {
+            this.gg.drawImage(this.backgroundImage, 0, 0,
+                    this.ground.getWidth(), this.ground.getHeight(), this);
+        }
     }
     /**
      * Erases all existing paths
@@ -202,6 +208,20 @@ public class World extends JFrame {
     void drawImage(Image img, AffineTransform placement) {
         this.gg.drawImage(img, placement, this);
         this.blit();
+    }
+
+    /**
+     * Sets background image for canvas
+     * @param imagePath
+     */
+    public void setBackgroundImage(String imagePath) {
+        try {
+            this.backgroundImage = ImageIO.read(new File(imagePath));
+            this.erase();
+            this.turtleMoved();
+        } catch (Exception e) {
+            System.err.println("Could not load background image: " + e.getMessage());
+        }
     }
 
 }

@@ -2,6 +2,7 @@ package com.pluralsight;
 
 import com.pluralsight.canvas.Turtle;
 import com.pluralsight.canvas.World;
+import com.pluralsight.shapes.EquilateralTriangle;
 import com.pluralsight.shapes.Square;
 
 import java.awt.*;
@@ -14,8 +15,12 @@ public class UserInterface {
     public static Turtle turtle = new Turtle(world, 0, 0);
 
     public static void display() throws InterruptedException {
-        Square square = new Square(turtle, Color.black, 3, 200);
-square.paint();
+        // Add background image
+        world.setBackgroundImage("background_grid.png");
+//        Square square = new Square(turtle, Color.black, 3, 200);
+//square.paint();
+        EquilateralTriangle triangle = new EquilateralTriangle(turtle, Color.black, 3, 100);
+        triangle.paint();
     }
 
     public static void drawRectangle() throws InterruptedException {
