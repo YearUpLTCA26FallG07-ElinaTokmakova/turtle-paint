@@ -42,7 +42,9 @@ public class Square extends Shape {
         turtle.forward(sideLength); // Third side
         turtle.turnRight(90);
         turtle.forward(sideLength); // Fourth side
-        turtle.turnRight(90);
         turtle.penUp(); // Finish drawing
+        turtle.turnRight(135);
+        turtle.goTo(0,0); // Return to center
+        turtle.turnRight(45);
     }
 }

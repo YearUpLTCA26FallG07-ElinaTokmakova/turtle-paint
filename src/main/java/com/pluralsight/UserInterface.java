@@ -14,7 +14,7 @@ public class UserInterface {
     public static Turtle turtle = new Turtle(world, 0, 0);
 
     public static void display() throws InterruptedException {
-        Square square = new Square(turtle, Color.black, 3, 50);
+        Square square = new Square(turtle, Color.black, 3, 200);
 square.paint();
     }
 
