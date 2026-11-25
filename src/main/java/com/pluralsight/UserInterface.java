@@ -19,8 +19,9 @@ public class UserInterface {
 
     public static void drawRectangle() throws InterruptedException {
         delay();
-        turtle.turnRight(90); // rotates 90 degrees to the right
-        turtle.forward(50); // moves 50 "steps" forward
+        turtle.penUp();
+        turtle.turnRight(90); // Rotates 90 degrees to the right
+        turtle.forward(50); // Moves 50 "steps" forward
         // Start drawing
         turtle.penDown();
         turtle.turnRight(90);
@@ -38,20 +39,19 @@ public class UserInterface {
         turtle.forward(50);
     }
 
-    public static void drawCircle() {
-        int steps = 24;
-        double stepLength = 10; // controls circle size
-        double angle = 360.0 / steps; // 10 degrees per step
-
+    public static void drawCircle() throws InterruptedException {
+        int radius = 50;
+        int steps = 36;
+        double angle = 360.0 / steps; // Angle at which turtle needs to turn for next step
+        double stepLength = (2 * Math.PI * radius) / steps; // 10 degrees per step
+        delay();
         turtle.penUp();
-        turtle.goTo(0, -120); // move to a starting point so it doesn't overlap the rectangle
+        turtle.goTo(0, -120); // Move to a starting point so it doesn't overlap the rectangle
         turtle.penDown();
-
         for (int i = 0; i < steps; i++) {
             turtle.forward(stepLength);
             turtle.turnRight(angle);
         }
-
         turtle.penUp();
     }
 
