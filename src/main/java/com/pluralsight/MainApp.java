@@ -5,7 +5,7 @@ import com.pluralsight.canvas.World;
 
 public class MainApp {
     public static void main(String[] args) throws InterruptedException {
-UserInterface.display();
+        UserInterface.display();
 //        turtle.penUp();
 //        turtle.penDown();
 //        turtle.turnRight(90); // rotates 90 degrees to the right

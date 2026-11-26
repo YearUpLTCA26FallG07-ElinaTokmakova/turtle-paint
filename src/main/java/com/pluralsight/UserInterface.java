@@ -4,6 +4,7 @@ import com.pluralsight.canvas.Turtle;
 import com.pluralsight.canvas.World;
 import com.pluralsight.shapes.Circle;
 import com.pluralsight.shapes.EquilateralTriangle;
+import com.pluralsight.shapes.Hexagon;
 import com.pluralsight.shapes.Square;
 
 import java.awt.*;
@@ -22,8 +23,10 @@ public class UserInterface {
 //square.paint();
 //        EquilateralTriangle triangle = new EquilateralTriangle(turtle, Color.black, 3, 100);
 //        triangle.paint();
-        Circle circle = new Circle(turtle, Color.black, 3, 50);
-        circle.paint();
+//        Circle circle = new Circle(turtle, Color.black, 3, 50);
+//        circle.paint();
+        Hexagon hexagon = new Hexagon(turtle, Color.black, 3, 50);
+        hexagon.paint();
     }
 
     public static void drawCircle() throws InterruptedException {

@@ -7,11 +7,12 @@ import java.awt.*;
 public class Circle extends Shape {
     private double sideLength;
     private double radius;
-    private final int steps = 36;
-    private double angle; // Angle at which turtle needs to turn for next step
+    private final int steps;
+    private final double angle; // Angle at which turtle needs to turn for next step
 
     public Circle(Turtle turtle, Color color, int border, double radius) {
         super(turtle, color, border);
+        this.steps = 36;
         this.sideLength = (2 * Math.PI * radius) / steps; // Circumference divided by steps
         this.radius = radius;
         this.angle = 360.0 / steps;

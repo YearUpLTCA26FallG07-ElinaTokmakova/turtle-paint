@@ -6,11 +6,12 @@ import java.awt.*;
 
 public class EquilateralTriangle extends Shape {
     private double sideLength;
-    private final int angle = 60;
+    private final int angle;
 
     public EquilateralTriangle(Turtle turtle, Color color, int border, double sideLength) {
         super(turtle, color, border);
         this.sideLength = sideLength;
+        this.angle = 60;
     }
 
     public double getSideLength() {
