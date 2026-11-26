@@ -46,7 +46,8 @@ public class Console {
                         continue;
                     }
                 }
-                try { // Convert string to integer
+
+                try { // Convert string to double
                     return Integer.parseInt(input);
                 } catch (NumberFormatException e) {
                     System.out.println("Invalid input. Please enter a valid whole number.");
@@ -56,23 +57,32 @@ public class Console {
             }
     }
 
-    // User input for any numbers
+    // Required user input for double
     public static double promptForDouble(String prompt) {
-        double result = 0.0;
-        boolean isValid = false;
+    return promptForDouble(prompt, false);
+    }
 
-        do {
-            try {
-                System.out.print(prompt);
-                result = scanner.nextDouble();
-                scanner.nextLine(); // Consume the newline
-                isValid = true;     // Input was successful, exit loop
-            } catch (InputMismatchException e) {
-                System.out.println("\nInvalid input. Please enter a valid number.");
-                scanner.nextLine(); // Clear the bad input from the scanner buffer
+    // Skippable field for double
+    public static double promptForDouble(String prompt, boolean skippable) {
+        while (true) {
+            System.out.print(prompt);
+            String input = scanner.nextLine().trim();
+            if (input.isEmpty()) {
+                if (skippable) { // If a field is skippable
+                    return Double.parseDouble(null);
+                } else {
+                    System.out.println("This field is required."); // If a field is unskippable
+                    continue;
+                }
             }
-        } while (!isValid);
 
-        return result;
+            try { // Convert string to double
+                return Double.parseDouble(input);
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter a valid whole number.");
+            } catch (Exception e) {
+                System.out.println("Something went wrong. Please try again.");
+            }
+        }
     }
 }
