@@ -5,20 +5,20 @@ import java.awt.*;
 import java.awt.geom.Point2D;
 
 public class Square extends Shape {
-    private int sideLength; // Prompt user for this
+    private double sideLength; // Prompt user for this
     private final int angle = 90; // Angle at which turtle needs to turn for drawing next side
 
-    public Square(Turtle turtle, Color color, int border, int sideLength) {
+    public Square(Turtle turtle, Color color, int border, double sideLength) {
         super(turtle, color, border);
         this.sideLength = sideLength;
         setLocation(new Point2D.Double(0, 0));
     }
 
-    public int getSideLength() {
+    public double getSideLength() {
         return sideLength;
     }
 
-    public void setSideLength(int sideLength) {
+    public void setSideLength(double sideLength) {
         this.sideLength = sideLength;
     }
 
@@ -28,10 +28,10 @@ public class Square extends Shape {
 
     @Override
     public void paint() {
+        double halfSideLength = sideLength / 2.0;
         Turtle turtle = getTurtle();
         turtle.penUp(); // Making sure turtle leaves no trail till it gets to starting point
         turtle.turnRight(135); // Rotates  degrees to the right
-        int halfSideLength = sideLength / 2;
         turtle.goTo(-halfSideLength, -halfSideLength); // Moves to starting point
         turtle.turnRight(135);
         turtle.penDown(); // Start drawing

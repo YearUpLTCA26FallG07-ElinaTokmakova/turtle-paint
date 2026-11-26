@@ -5,15 +5,15 @@ import com.pluralsight.canvas.Turtle;
 import java.awt.*;
 
 public class EquilateralTriangle extends Shape {
-    private int sideLength;
+    private double sideLength;
     private final int angle = 60;
 
-    public EquilateralTriangle(Turtle turtle, Color color, int border, int sideLength) {
+    public EquilateralTriangle(Turtle turtle, Color color, int border, double sideLength) {
         super(turtle, color, border);
         this.sideLength = sideLength;
     }
 
-    public int getSideLength() {
+    public double getSideLength() {
         return sideLength;
     }
 
@@ -30,8 +30,8 @@ public class EquilateralTriangle extends Shape {
         Turtle turtle = getTurtle();
         turtle.penUp(); // Making sure turtle leaves no trail till it gets to starting point
         turtle.turnRight(120); // Rotates  degrees to the right
-        int x =  - sideLength / 2;
-        int y = - sideLength / 3;
+        double x =  - sideLength / 2.0;
+        double y = - sideLength / 3.0;
         turtle.goTo(x, y); // Moves to starting point
         turtle.turnRight(180);
         turtle.penDown(); // Start drawing

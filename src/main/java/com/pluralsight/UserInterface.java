@@ -2,6 +2,7 @@ package com.pluralsight;
 
 import com.pluralsight.canvas.Turtle;
 import com.pluralsight.canvas.World;
+import com.pluralsight.shapes.Circle;
 import com.pluralsight.shapes.EquilateralTriangle;
 import com.pluralsight.shapes.Square;
 
@@ -19,30 +20,10 @@ public class UserInterface {
         world.setBackgroundImage("background_grid.png");
 //        Square square = new Square(turtle, Color.black, 3, 200);
 //square.paint();
-        EquilateralTriangle triangle = new EquilateralTriangle(turtle, Color.black, 3, 100);
-        triangle.paint();
-    }
-
-    public static void drawRectangle() throws InterruptedException {
-        delay();
-        turtle.penUp();
-        turtle.turnRight(90); // Rotates 90 degrees to the right
-        turtle.forward(50); // Moves 50 "steps" forward
-        // Start drawing
-        turtle.penDown();
-        turtle.turnRight(90);
-        turtle.forward(50);
-
-        turtle.turnRight(90);
-        turtle.forward(100);
-        turtle.turnRight(90);
-
-        turtle.forward(100);
-        turtle.turnRight(90);
-        turtle.forward(100);
-
-        turtle.turnRight(90);
-        turtle.forward(50);
+//        EquilateralTriangle triangle = new EquilateralTriangle(turtle, Color.black, 3, 100);
+//        triangle.paint();
+        Circle circle = new Circle(turtle, Color.black, 3, 50);
+        circle.paint();
     }
 
     public static void drawCircle() throws InterruptedException {
