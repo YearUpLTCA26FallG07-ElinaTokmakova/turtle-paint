@@ -3,6 +3,7 @@ package com.pluralsight.shapes;
 import com.pluralsight.canvas.Turtle;
 
 import java.awt.*;
+import java.awt.geom.Point2D;
 
 public class Circle extends Shape {
     private double sideLength;
@@ -10,8 +11,8 @@ public class Circle extends Shape {
     private final int steps;
     private final double angle; // Angle at which turtle needs to turn for next step
 
-    public Circle(Turtle turtle, Color color, int border, double radius) {
-        super(turtle, color, border);
+    public Circle(Turtle turtle, Point2D location, Color color, int border, double radius) {
+        super(turtle, location, color, border);
         this.steps = 36;
         this.sideLength = (2 * Math.PI * radius) / steps; // Circumference divided by steps
         this.radius = radius;

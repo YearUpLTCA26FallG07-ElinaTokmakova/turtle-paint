@@ -46,7 +46,6 @@ public class Turtle {
 
     private World world;
     private double theta;
-
     private Point2D.Double location;
     private boolean isdown;
     // private GeneralPath trail; // not used

@@ -8,10 +8,9 @@ public class Square extends Shape {
     private double sideLength; // Prompt user for this
     private final int angle = 90; // Angle at which turtle needs to turn for drawing next side
 
-    public Square(Turtle turtle, Color color, int border, double sideLength) {
-        super(turtle, color, border);
+    public Square(Turtle turtle, Point2D location, Color color, int border, double sideLength) {
+        super(turtle, location, color, border);
         this.sideLength = sideLength;
-        setLocation(new Point2D.Double(0, 0));
     }
 
     public double getSideLength() {

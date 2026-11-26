@@ -11,10 +11,11 @@ public abstract class Shape {
     private Color color; // Color used for the border
     private int border; // Width of the shape border
 
-    public Shape(Turtle turtle, Color color, int border) {
+    public Shape(Turtle turtle, Point2D location, Color color, int border) {
         this.turtle = turtle;
+        this.location = new Point2D.Double(0,0);
         this.color = color;
-        this.border = border;
+        this.border = 5;
     }
 
     public Turtle getTurtle() {

@@ -3,13 +3,14 @@ package com.pluralsight.shapes;
 import com.pluralsight.canvas.Turtle;
 
 import java.awt.*;
+import java.awt.geom.Point2D;
 
 public class Hexagon extends Shape {
     private double sideLength;
     private final int angle;
 
-    public Hexagon(Turtle turtle, Color color, int border, double sideLength) {
-        super(turtle, color, border);
+    public Hexagon(Turtle turtle, Point2D location, Color color, int border, double sideLength) {
+        super(turtle, location, color, border);
         this.sideLength = sideLength;
         this.angle = 120;
     }

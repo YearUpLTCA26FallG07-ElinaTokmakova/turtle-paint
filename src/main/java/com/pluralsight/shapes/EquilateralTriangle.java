@@ -3,13 +3,14 @@ package com.pluralsight.shapes;
 import com.pluralsight.canvas.Turtle;
 
 import java.awt.*;
+import java.awt.geom.Point2D;
 
 public class EquilateralTriangle extends Shape {
     private double sideLength;
     private final int angle;
 
-    public EquilateralTriangle(Turtle turtle, Color color, int border, double sideLength) {
-        super(turtle, color, border);
+    public EquilateralTriangle(Turtle turtle, Point2D location, Color color, int border, double sideLength) {
+        super(turtle, location, color, border);
         this.sideLength = sideLength;
         this.angle = 60;
     }
